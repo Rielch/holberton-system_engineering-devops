@@ -1,1 +1,1 @@
-Gabriel Prochnau`s repository for projects from Holberton School
+Gabriel Prochnau`s repository for "Project 0x00. Shell, basics" from Holbertons School
