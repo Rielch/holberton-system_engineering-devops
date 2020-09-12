@@ -1,0 +1,1 @@
+Gabriel Prochnau`s directory for "Project: 0x02. Shell, redirections" from Holberton School
