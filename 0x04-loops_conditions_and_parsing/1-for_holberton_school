@@ -2,5 +2,5 @@
 #Display's Holberton 10 times
 $i
 for i in {0..9}; do
-    echo "Holberton"
+    echo "Holberton School"
 done
