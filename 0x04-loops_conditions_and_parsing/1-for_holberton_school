@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #Display's Holberton 10 times
+$i
 for i in {0..9}; do
     echo "Holberton"
 done
