@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Displays numbers from 1 to 20 and says which are bad luck numbers
+i=1
+while [ $i -le 20 ]; do
+echo $i
+if [ $i == 4 ]; then
+   echo "bad luck from China"
+elif [ $i == 8 ]; then
+     echo "bad luck from Japan"
+elif [ $i == 17 ]; then
+     echo "bad luck from Italy"
+fi
+let "i+=1"
+done
