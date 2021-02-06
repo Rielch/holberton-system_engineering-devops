@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Display's a clock with 12 hours and 59 minutes
+h=0
+while [ $h -le 12 ]; do
+    echo "Hour: $h"
+    m=1
+    while [ $m -lt 60 ]; do
+	echo $m
+	let "m+=1"
+    done
+    let "h+=1"
+done
