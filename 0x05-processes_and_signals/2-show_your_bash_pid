@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Displays the process that contain the bash word
+#This is intentional
+# shellcheck disable=SC2009
+ps auxf | grep bash
