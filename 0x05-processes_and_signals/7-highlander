@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Write to infinity and beyond indefinitely and i'm invincible when recieves an exit signal
+#This is intentional
+# shellcheck disable=SC2078
+while [ 0 ]; do
+    echo "To infinity and beyond"
+    sleep 2
+    trap 'echo "I am invincible!!!"' TERM
+done
