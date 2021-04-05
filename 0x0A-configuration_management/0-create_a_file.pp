@@ -1,3 +1,4 @@
+#Creates the file /tmp/holberton in the directory /tmp/holberton
 file { '/tmp/holberton':
     path    => '/tmp/holberton',
     content => 'I love Puppet',
