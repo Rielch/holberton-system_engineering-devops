@@ -12,5 +12,6 @@ def top_ten(subreddit):
                      headers={"User-Agent": "Mozilla/5.0"})
     if r.status_code != 200:
         print(None)
-    for post in r.json().get("data").get("children"):
-        print(post.get("data").get("title"))
+    else:
+        for post in r.json().get("data").get("children"):
+            print(post.get("data").get("title"))
