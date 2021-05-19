@@ -3,17 +3,20 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=""):
+def recurse(subreddit, hot_list=[], after=None):
     """Return  a list of the titles of all
     hot posts in a subreddit recursively"""
 
+    parameters = {"limit": 1}
     if after != None:
         if after == "STOP":
             return hot_list
-    r = requests.get("https://www.reddit.com/r/{}/hot.json\
-?after={}&limit=1"
+        else:
+            pararameters["after"] = after
+    r = requests.get("https://www.reddit.com/r/{}/hot.json"
                      .format(subreddit, after), allow_redirects=False,
-                     headers={"User-Agent": "Mozilla/5.0"})
+                     headers={"User-Agent": "Mozilla/5.0"},
+                     params=parameters)
     if r.status_code != 200:
         return None
     count += 1
