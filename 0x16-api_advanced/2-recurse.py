@@ -3,27 +3,24 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=[], count=0, after=None):
     """Return  a list of the titles of all
     hot posts in a subreddit recursively"""
 
     parameters = {"limit": 1}
+    parameters["count"] = count
     if after != None:
-        if after == "STOP":
-            return hot_list
-        else:
-            pararameters["after"] = after
+        parameters["after"] = after
     r = requests.get("https://www.reddit.com/r/{}/hot.json"
                      .format(subreddit), allow_redirects=False,
                      headers={"User-Agent": "Mozilla/5.0"},
                      params=parameters)
     if r.status_code != 200:
         return None
+    after = r.json().get("data").get("after")
+    if after is None:
+        return hot_list
     count += 1
-    after = r.json().get("data", {}).get("after", "STOP")
-    if not after:
-        after = "STOP"
     hot_list.append([r.json().get("data").get("children")[0]
                      .get("data").get("title")])
-    hot_list = recurse(subreddit, hot_list, after)
-    return hot_list
+    return recurse(subreddit, hot_list, count, after)
