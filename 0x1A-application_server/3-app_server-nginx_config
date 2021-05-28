@@ -25,9 +25,9 @@ server {
 		 proxy_pass http://0.0.0.0:5000;
 	}
 
-	location /airbnb-dynamic/number_odd_or_even/(any integer) {
+	location ~ ^/airbnb-dynamic/number_odd_or_even/(\d+)$ {
 		 alias ~/AirBnB_clone_v2/;
-		 proxy_pass http://0.0.0.0:5001;
+		 proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1;
 	}
 
         listen [::]:80 default_server;
