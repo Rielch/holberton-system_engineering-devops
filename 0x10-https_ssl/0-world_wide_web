@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#Display information about subdomains
+if [[ -z $2 ]]
+then
+	ALL_SUBS="www lb-01 web-01 web-02"
+else
+	ALL_SUBS=$2
+fi
+for sub in $ALL_SUBS; do
+	DATA="$(dig "$sub.$1" | grep -A1 'ANSWER SECTION:' | awk 'NR==2')"
+	IP=$(echo "$DATA" | awk '{print $5}')
+	RECORD_TYPE=$(echo "$DATA" | awk '{print $4}')
+	echo The subdomain "$sub" is a "$RECORD_TYPE" record and points to "$IP"
+done
+exit 0
