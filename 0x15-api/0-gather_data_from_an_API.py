@@ -25,7 +25,7 @@ typicode.com/users/{}/todos"
             completed_tasks += 1
             tasks_titles.append(task["title"])
 
-    print("Employee {} is done with tasks {}/{}:".format(user[0]["name"],
+    print("Employee {} is done with tasks ({}/{}):".format(user[0]["name"],
                                                          completed_tasks,
                                                          total_tasks))
     for task in tasks_titles:
