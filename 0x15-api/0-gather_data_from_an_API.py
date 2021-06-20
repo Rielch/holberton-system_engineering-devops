@@ -5,12 +5,14 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    user_response = requests.get('https://jsonplaceholder.typicode.com/users\
-                                ?id={}'.format(argv[1]))
+    user_response = requests.get('https://jsonplaceholder.typicode.\
+com/users?id={}'
+                                 .format(argv[1]))
     user = user_response.json()
 
-    tasks_response = requests.get('https://jsonplaceholder.typicode.com/users/\
-                                {}/todos'.format(argv[1]))
+    tasks_response = requests.get("https://jsonplaceholder.\
+typicode.com/users/{}/todos"
+                                  .format(argv[1]))
     tasks = tasks_response.json()
 
     total_tasks = 0
