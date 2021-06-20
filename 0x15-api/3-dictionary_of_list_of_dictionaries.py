@@ -6,7 +6,8 @@ import requests
 
 if __name__ == "__main__":
 
-    users_tasks = requests.get('https://jsonplaceholder.typicode.com/todos').json()
+    users_tasks = requests.get('https://jsonplaceholder.typicode.com/\
+todos').json()
 
     users = requests.get('https://jsonplaceholder.typicode.com/users').json()
 
